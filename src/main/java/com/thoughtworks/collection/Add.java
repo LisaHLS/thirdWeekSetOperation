@@ -106,19 +106,36 @@ public class Add {
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
 
-        double median = 0.0;
-        int evenSum = 0;
+        List<Integer> evenList = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
             if (arrayList.get(i)%2 == 0) {
-                evenSum += arrayList.get(i);
+                evenList.add(arrayList.get(i));
             }
         }
-        median = evenSum/2;
+
+        double median = 0.0;
+        int evenListSize = evenList.size();
+        if (evenListSize%2 == 0) {
+            median = (evenList.get(evenListSize/2) + evenList.get(evenListSize/2 - 1))/2;
+        } else {
+            median = evenList.get(evenListSize/2);
+        }
+
         return median;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        int evenSum = 0;
+        int evenNum = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                evenSum += arrayList.get(i);
+                evenNum += 1;
+            }
+        }
+        double averageOfEven = evenSum/evenNum;
+        return averageOfEven;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
