@@ -124,6 +124,11 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        List<Integer> listOfThreeTimeSumOfFormerAndLatter = new ArrayList<>();
+        for (int i = 1; i < arrayList.size(); i++) {
+            listOfThreeTimeSumOfFormerAndLatter.add((arrayList.get(i) + arrayList.get(i-1))*3);
+        }
+        return listOfThreeTimeSumOfFormerAndLatter;
     }
 }
