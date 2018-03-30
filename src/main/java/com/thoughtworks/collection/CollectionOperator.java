@@ -56,7 +56,15 @@ public class CollectionOperator {
     }
 
     public List<Integer> popEvenElments(int[] array) {
-        throw new NotImplementedException();
+
+        List<Integer> evenList = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i]%2 == 0) {
+                evenList.add(array[i]);
+            }
+        }
+
+        return evenList;
     }
 
     public int popLastElment(int[] array) {
