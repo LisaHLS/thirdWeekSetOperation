@@ -26,7 +26,11 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        List<String> listOfDigitalMappingAlphabet  = new ArrayList<>();
+        for (int i = 0; i < array.size(); i++) {
+            listOfDigitalMappingAlphabet.add(letters[array.get(i)-1]);
+        }
+        return listOfDigitalMappingAlphabet;
     }
 
     public List<String> mapLetters() {
