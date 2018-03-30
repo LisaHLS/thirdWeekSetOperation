@@ -34,7 +34,24 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> listOfDigitalMappingAlphabets  = new ArrayList<>();
+
+        for (int i = 0; i < array.size(); i++) {
+
+            int times = array.get(i)/letters.length;
+            if(times == 0) {
+                listOfDigitalMappingAlphabets.add(letters[array.get(i)-1]);
+
+            } else if(times <= letters.length){
+
+                if(array.get(i)%letters.length == 0) {
+                    listOfDigitalMappingAlphabets.add(letters[times-2] + letters[letters.length-1]);
+                } else {
+                    listOfDigitalMappingAlphabets.add(letters[times-1] + letters[array.get(i)%letters.length-1]);
+                }
+            }
+        }
+        return listOfDigitalMappingAlphabets;
     }
 
     public List<Integer> sortFromBig() {
