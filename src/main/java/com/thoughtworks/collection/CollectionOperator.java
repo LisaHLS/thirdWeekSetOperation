@@ -24,7 +24,35 @@ public class CollectionOperator {
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+
+        List<Integer> intervalEvenList = new ArrayList<>();
+        if(left < right) {
+
+            if (left % 2 == 0) {
+                for (int i = left; i <= right; i += 2) {
+                    intervalEvenList.add(i);
+                }
+
+            } else {
+                for (int i = left + 1; i <= right; i += 2) {
+                    intervalEvenList.add(i);
+                }
+            }
+
+        } else {
+            if (left % 2 == 0) {
+                for (int i = left; i >= right; i -= 2) {
+                    intervalEvenList.add(i);
+                }
+
+            } else {
+                for (int i = left - 1; i >= right; i -= 2) {
+                    intervalEvenList.add(i);
+                }
+            }
+        }
+
+        return intervalEvenList;
     }
 
     public List<Integer> popEvenElments(int[] array) {
