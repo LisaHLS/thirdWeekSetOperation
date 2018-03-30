@@ -91,7 +91,16 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        int sumOfEachOddTripleAndAddTwo = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+
+            if (arrayList.get(i) % 2 == 1) {
+                sumOfEachOddTripleAndAddTwo += arrayList.get(i)*3 + 5;
+            }
+        }
+        return sumOfEachOddTripleAndAddTwo;
+
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
