@@ -3,7 +3,9 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -149,7 +151,13 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        Set<Integer> unrepeatedEvenSet = new HashSet<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                unrepeatedEvenSet.add(arrayList.get(i));
+            }
+        }
+        return new ArrayList<>(unrepeatedEvenSet);
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
