@@ -3,7 +3,9 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Filter {
 
@@ -36,6 +38,7 @@ public class Filter {
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        Set<Integer> unrepeatedEvenSet = new HashSet<>(array);
+        return new ArrayList<>(unrepeatedEvenSet);
     }
 }
