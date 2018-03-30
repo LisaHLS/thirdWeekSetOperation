@@ -38,7 +38,7 @@ public class Filter {
     }
 
     public List<Integer> getDifferentElements() {
-        Set<Integer> unrepeatedEvenSet = new HashSet<>(array);
-        return new ArrayList<>(unrepeatedEvenSet);
+        Set<Integer> unrepeatedSet = new HashSet<>(array);
+        return new ArrayList<>(unrepeatedSet);
     }
 }
