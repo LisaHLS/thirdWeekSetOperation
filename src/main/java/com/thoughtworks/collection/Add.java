@@ -6,7 +6,33 @@ import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+
+        int evenSum = 0;
+        if (leftBorder < rightBorder) {
+
+            if (leftBorder%2 == 0) {
+                for (int i = leftBorder; i <= rightBorder; i+=2) {
+                    evenSum += i;
+                }
+            } else {
+                for (int i = leftBorder+1; i <= rightBorder; i+=2) {
+                    evenSum += i;
+                }
+            }
+
+        } else {
+            if (rightBorder%2 == 0) {
+                for (int i = rightBorder; i <= leftBorder; i+=2) {
+                    evenSum += i;
+                }
+            } else {
+                for (int i = rightBorder+1; i <= leftBorder; i+=2) {
+                    evenSum += i;
+                }
+            }
+        }
+
+        return evenSum;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
