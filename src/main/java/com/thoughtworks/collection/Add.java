@@ -92,14 +92,15 @@ public class Add {
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
 
-        int sumOfEachOddTripleAndAddTwo = 0;
+        int sumOfEachOddTripleAndAddFive = 0;
+
         for (int i = 0; i < arrayList.size(); i++) {
 
             if (arrayList.get(i) % 2 == 1) {
-                sumOfEachOddTripleAndAddTwo += arrayList.get(i)*3 + 5;
+                sumOfEachOddTripleAndAddFive += arrayList.get(i)*3 + 5;
             }
         }
-        return sumOfEachOddTripleAndAddTwo;
+        return sumOfEachOddTripleAndAddFive;
 
     }
 
