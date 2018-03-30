@@ -36,7 +36,31 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int oddSum = 0;
+        if (leftBorder < rightBorder) {
+
+            if (leftBorder%2 == 1) {
+                for (int i = leftBorder; i <= rightBorder; i+=2) {
+                    oddSum += i;
+                }
+            } else {
+                for (int i = leftBorder+1; i <= rightBorder; i+=2) {
+                    oddSum += i;
+                }
+            }
+
+        } else {
+            if (rightBorder%2 == 1) {
+                for (int i = rightBorder; i <= leftBorder; i+=2) {
+                    oddSum += i;
+                }
+            } else {
+                for (int i = rightBorder+1; i <= leftBorder; i+=2) {
+                    oddSum += i;
+                }
+            }
+        }
+        return oddSum;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
