@@ -48,11 +48,25 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        int firstEven = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                firstEven = arrayList.get(i);
+                break;
+            }
+        }
+        return firstEven;
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        int firstEvenIndex = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                firstEvenIndex = i;
+                break;
+            }
+        }
+        return firstEvenIndex;
     }
 
     public boolean isEqual(List<Integer> arrayList) {
@@ -65,10 +79,24 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        int lastOdd = 0;
+        for (int i = arrayList.size()-1; i >= 0; i--) {
+            if (arrayList.get(i)%2 == 1) {
+                lastOdd = arrayList.get(i);
+                break;
+            }
+        }
+        return lastOdd;
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        int lastOddIndex = 0;
+        for (int i = arrayList.size()-1; i >= 0; i--) {
+            if (arrayList.get(i)%2 == 1) {
+                lastOddIndex = i;
+                break;
+            }
+        }
+        return lastOddIndex;
     }
 }
