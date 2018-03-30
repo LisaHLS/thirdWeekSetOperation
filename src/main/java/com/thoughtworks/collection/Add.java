@@ -1,11 +1,6 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -161,7 +156,27 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        List<Integer> evenList = new ArrayList<>();
+        List<Integer> oddList = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                evenList.add(arrayList.get(i));
+            } else {
+                oddList.add(arrayList.get(i));
+            }
+        }
+
+        Collections.sort(evenList);
+        Collections.sort(oddList, new Comparator<Integer>() {
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+
+        List<Integer> sortedList = new ArrayList<>(evenList);
+        sortedList.addAll(oddList);
+        return sortedList;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
