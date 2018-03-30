@@ -24,7 +24,14 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        int sum = 0;
+        int num = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+                sum += arrayList.get(i);
+                num += 1;
+        }
+        double average = (double)sum/num;
+        return average;
     }
 
     public double getOrderedMedian() {
