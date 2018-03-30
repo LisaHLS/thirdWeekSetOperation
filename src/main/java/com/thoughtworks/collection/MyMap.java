@@ -1,7 +1,5 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,10 +53,29 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+
+        for(int i=1;i<array.size();i++){
+            for(int j=i;j>0;j--){
+                if (array.get(j-1) < array.get(j)){
+                    int temp=array.get(j-1);
+                    array.set(j-1,array.get(j));
+                    array.set(j,temp);
+                }else break;
+            }
+        }
+        return array;
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        for(int i=1;i<array.size();i++){
+            for(int j=i;j>0;j--){
+                if (array.get(j) < array.get(j-1)){
+                    int temp=array.get(j-1);
+                    array.set(j-1,array.get(j));
+                    array.set(j,temp);
+                }else break;
+            }
+        }
+        return array;
     }
 }
