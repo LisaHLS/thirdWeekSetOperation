@@ -105,7 +105,16 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        double median = 0.0;
+        int evenSum = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i)%2 == 0) {
+                evenSum += arrayList.get(i);
+            }
+        }
+        median = evenSum/2;
+        return median;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
