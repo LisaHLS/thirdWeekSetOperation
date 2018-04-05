@@ -1,7 +1,5 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -69,13 +67,40 @@ public class Reduce {
         return firstEvenIndex;
     }
 
-    public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+    public boolean isEqual(List<Integer> diffArrayList) {
+
+        boolean isEqual = true;
+        if (diffArrayList.size() == arrayList.size()) {
+
+            for (int i = 0; i < arrayList.size(); i++) {
+                if(arrayList.get(i) != diffArrayList.get(i)) {
+                    isEqual = false;
+                    break;
+                }
+            }
+
+        } else {
+            isEqual = false;
+        }
+
+        return isEqual;
     }
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+
+        double median = 0.0;
+        for(Integer item : arrayList) {
+            singleLink.addTailPointer(item);
+        }
+        int listSize = arrayList.size();
+        if (listSize%2 == 0) {
+            median = ((int)singleLink.getNode(listSize/2) + (int)singleLink.getNode(listSize/2 + 1))/2.0;
+        } else {
+            median = (double)singleLink.getNode(listSize/2 + 1);
+        }
+
+        return median;
     }
 
     public int getLastOdd() {
